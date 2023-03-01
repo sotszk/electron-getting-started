@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 
 const createWindow = () => {
@@ -10,6 +10,8 @@ const createWindow = () => {
     },
   });
 
+  // IPC とはプロセス間通信のこと
+  ipcMain.handle("ping", () => "pong");
   aWindow.loadFile("./index.html");
 };
 

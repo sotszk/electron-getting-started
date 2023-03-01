@@ -6,10 +6,11 @@ preload.js
   - Node.js: events, url, timers
 */
 
-const { contextBridge } = require("electron");
+const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("versions", {
   node: () => process.version.node,
   chrome: () => process.versions.chrome,
   electron: () => process.versions.electron,
+  ping: () => ipcRenderer.invoke("ping"),
 });

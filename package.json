@@ -2,9 +2,9 @@
   "name": "electron-getting-started",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "electron ./main.js"
+    "start": "electron ."
   },
   "keywords": [],
   "author": "",

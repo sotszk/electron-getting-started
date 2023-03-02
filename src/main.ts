@@ -13,6 +13,10 @@ const createWindow = () => {
   // IPC とはプロセス間通信のこと
   ipcMain.handle("ping", () => "pong");
   aWindow.loadFile(path.join(__dirname, "..", "public", "index.html"));
+
+  // Main Process からコンテンツへアクセスする
+  // const contents = aWindow.webContents;
+  // console.log(contents);
 };
 
 app.whenReady().then(() => {

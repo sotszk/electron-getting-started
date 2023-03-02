@@ -1,5 +1,5 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
-const path = require("path");
+import { app, ipcMain, BrowserWindow } from "electron";
+import * as path from "path";
 
 const createWindow = () => {
   const aWindow = new BrowserWindow({
@@ -12,7 +12,7 @@ const createWindow = () => {
 
   // IPC とはプロセス間通信のこと
   ipcMain.handle("ping", () => "pong");
-  aWindow.loadFile("./index.html");
+  aWindow.loadFile(path.join(__dirname, "..", "public", "index.html"));
 };
 
 app.whenReady().then(() => {

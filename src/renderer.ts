@@ -1,3 +1,5 @@
+/// <reference path="./renderer.d.ts" />
+
 const infoEl = document.getElementById("info");
 
 // preload.js によって global(window) に versions が expose されているので下記のように versions にアクセス可能
